@@ -1,0 +1,120 @@
+{% extends 'blog/basic.html' %}
+
+{% block body %}
+<style>
+    
+    .page-header {
+        text-align: center;
+        font-weight: bold;
+        font-size: 24px;
+        margin-bottom: 20px;
+        color: #333; 
+        background-color: #f0f0f0; 
+        padding: 10px;
+        border-radius: 5px;
+    }
+    
+    .recommended-blogs {
+        margin-top: 20px;
+        font-size: 18px;
+        font-style: italic;
+        color: #666; 
+    }
+    
+    .card-wrapper {
+        background-color: #fff; 
+        border: 1px solid #ddd; 
+        border-radius: 5px;
+        overflow: hidden;
+        margin-bottom: 20px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1); 
+    }
+    
+    .card-content {
+        padding: 1rem;
+    }
+    
+    .card-content h3 {
+        color: #333; 
+    }
+    
+    .card-content .text-muted {
+        color: #999; 
+    }
+    
+    .card-content .card-text {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        
+        width: 100%;
+        color: #666; 
+    }
+    
+    .card-image img {
+        width: 100%; 
+        height: auto; 
+        display: block; 
+    }
+    
+    @media (min-width: 992px) {
+        .card-wrapper {
+            display: flex;
+        }
+        
+        .card-content {
+            flex: 1;
+            padding-right: 1rem;
+        }
+        
+        .card-image {
+            width: 200px; 
+            height: 250px; 
+        }
+    }
+</style>
+
+<div class="container mt-3">
+    <div class="page-header">
+        Welcome to Our Blogging Website
+    </div>
+    
+    <div class="recommended-blogs">
+        Here are Some recommended Blogs
+    </div>
+    
+    <div class="row my-2">
+        {% for item in myposts %}
+        <div class="col-md-6">
+            <div class="card-wrapper border rounded shadow-sm">
+                <div class="card-content">
+                    <strong class="d-inline-block mb-2 text-primary">
+                        {{ item.head0 }}
+                    </strong>
+                    <h3 class="mb-0">{{ item.tilte }}</h3>
+                    <div class="mb-1 text-muted">{{ item.date }}</div>
+                    {% if item.para|wordcount >= 20 %}
+                        <p class="card-text mb-auto">{{ item.para|truncatewords_html:20 }}</p>
+                    {% else %}
+                        <p class="card-text mb-auto">{{ item.para }}</p>
+                    {% endif %}
+                    <a href="blogpost/{{ item.post_id }}" class="stretched-link">Continue reading</a>
+                </div>
+                <div class="col-auto d-none d-lg-block card-image">
+                    <img src="/media/{{ item.thumbnail }}" class="bd-placeholder-img" aria-label="Placeholder: Thumbnail">
+                </div>
+            </div>
+        </div>
+        {% if forloop.counter|divisibleby:2 %}
+    </div>
+    <div class="row my-2">
+        {% endif %}
+        {% endfor %}
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <p class="text-muted">The Blog WebApp is currently in Progress</p>
+    </div>
+</footer>
+{% endblock %}

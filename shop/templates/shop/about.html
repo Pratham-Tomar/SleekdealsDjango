@@ -1,0 +1,125 @@
+{% extends 'shop/basic.html' %}
+{% block title %} About Us{% endblock %}
+{% block body %}
+
+<style>
+  .display-3 {
+      color: black; 
+      font-weight: bold; 
+      padding-bottom: 20px; 
+      animation: slideInLeft 1s ease; 
+  }
+  
+  
+  .jumbotron {
+      background-color: #cae7f7; 
+  }
+  
+  
+  @keyframes slideInLeft {
+      0% {
+          transform: translateX(-100%);
+      }
+      100% {
+          transform: translateX(0);
+      }
+  }
+  .custom-btn-bg {
+    background-color: #007bff;
+}
+
+  
+  
+  .jumbotron p {
+      font-size: 18px; 
+  }
+  </style>
+
+<main role="main">
+
+  
+  <div class="jumbotron">
+    <div class="container">
+      <h1 class="display-3  ">SleekDeals</h1>
+      <p>At SleekDeals, we are dedicated to providing our customers with a seamless shopping experience, offering a wide range of high-quality products at competitive prices. Our commitment to excellence and customer satisfaction drives everything we do.</p>
+    </div>
+  </div>
+
+  <div class="container">
+    
+    <div class="row">
+      <div class="col-md-4">
+        <h2>Quality Assurance</h2>
+        <p>At SleekDeals, we take pride in the quality of our products. Each item is carefully handpicked by our team to ensure it meets our stringent quality standards. We understand that quality is paramount when making purchasing decisions, which is why we go the extra mile to source products that offer superior craftsmanship, durability, and performance. </p>
+      </div>
+      <div class="col-md-4">
+        <h2>Affordable Pricing</h2>
+        <p>We believe that everyone should have access to high-quality products at affordable prices. At SleekDeals, we strive to make luxury and convenience accessible to all customers, regardless of budget constraints. By cutting out unnecessary intermediaries and operating with efficiency, we are able to offer competitive pricing without compromising on quality. </p>
+      </div>
+      <div class="col-md-4">
+        <h2>Exceptional Customer Service</h2>
+        <p>Your satisfaction is our top priority at SleekDeals. We understand that shopping online can sometimes be daunting, which is why we provide exceptional customer service every step of the way. Our dedicated team of customer service representatives is here to assist you with any inquiries.</p>
+        
+      </div>
+      <p><a class="btn btn-secondary custom-btn-bg"  href="#" role="button" onclick="toggleDetails('customer-service-details')">View details &raquo;</a></p>
+
+        <div id="customer-service-details" style="display: none;">
+          <br>
+          <p>
+           <b>Our Mission:</b>
+            At SleekDeals, our mission is to revolutionize the online shopping experience by offering a curated selection of high-quality products at unbeatable prices. We aim to provide customers with a seamless and enjoyable shopping journey, from browsing our extensive catalog to receiving their purchases at their doorstep.
+            <br>
+            
+            <b>Product Diversity</b>
+            We take pride in offering a diverse range of products to cater to the varying needs and preferences of our customers. From electronics and gadgets to fashion and lifestyle essentials, SleekDeals is your one-stop destination for all your shopping needs.
+            <br>
+            
+            <b>Commitment to Quality</b>
+            Quality is at the core of everything we do. We meticulously handpick each product to ensure it meets our rigorous quality standards. Whether it's durability, functionality, or aesthetics, you can trust SleekDeals to deliver products that exceed your expectations.
+            <br>
+            <b>Competitive Pricing</b>
+            We believe that everyone deserves access to great products at great prices. That's why we strive to offer competitive pricing without compromising on quality. By optimizing our sourcing and operational processes, we pass on the savings to our customers, making luxury and convenience accessible to all.
+            <br>
+            
+             <b>Exceptional Customer Service</b>
+            Your satisfaction is our top priority. Our dedicated customer service team is here to assist you every step of the way, from product inquiries to after-sales support. We are committed to providing personalized and prompt assistance to ensure a hassle-free shopping experience.
+            <br>
+            
+             <b>Community Engagement:</b>
+            At SleekDeals, we value community engagement and actively seek feedback from our customers to continuously improve our offerings and services. We believe in building long-lasting relationships with our customers based on trust, transparency, and mutual respect.
+            <br>
+             <b>Environmental Responsibility:</b>
+            We are committed to minimizing our environmental footprint by adopting sustainable practices throughout our operations. From eco-friendly packaging to responsible sourcing, we strive to contribute to a greener and healthier planet.
+            <br>
+             <b>Social Impact:</b>
+            SleekDeals is dedicated to making a positive impact on society by supporting charitable initiatives and community development projects. Through partnerships with non-profit organizations, we aim to create meaningful change and improve the lives of those in need.
+            <br>
+            At SleekDeals, we are more than just an e-commerce platform – we are a trusted partner in your journey towards a better lifestyle. Shop with us and experience the difference today!.</p>
+        </div>
+    </div>
+
+    <hr>
+
+  </div> 
+
+</main>
+
+<footer class="container">
+  <p>&copy; Company 2017-2020</p>
+</footer>
+<script src="https:
+      <script>window.jQuery || document.write('<script src="/docs/4.5/assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="/docs/4.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-LtrjvnR4Twt/qOuYxE721u19sVFLVSA4hf/rRt6PrZTmiPltdZcI7q7PXQBYTKyf" crossorigin="anonymous"></script>
+      <script>
+        function toggleDetails(id) {
+          var details = document.getElementById(id);
+          if (details.style.display === 'none') {
+            details.style.display = 'block';
+          } else {
+            details.style.display = 'none';
+          }
+        }
+      </script></body>
+</html>
+
+
+{% endblock %}

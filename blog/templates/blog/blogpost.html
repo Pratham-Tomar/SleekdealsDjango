@@ -1,0 +1,115 @@
+{% extends 'blog/basic.html' %}
+
+{% block body %}
+<style>
+    .blog-main {
+        font-family: Arial, sans-serif;
+    }
+
+    .blog-post {
+        margin-bottom: 30px;
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 20px;
+    }
+
+    .blog-post-title {
+        color: #333;
+        font-size: 28px;
+        margin-bottom: 10px;
+    }
+
+    .blog-post-meta {
+        font-size: 14px;
+        color: #666;
+        margin-bottom: 15px;
+    }
+
+    .blog-post p {
+        line-height: 1.6;
+        margin-bottom: 15px;
+    }
+
+    .fb-like,
+    .fb-comments {
+        margin-top: 20px;
+    }
+
+    .blog-sidebar {
+        background-color: #f8f9fa;
+        padding: 15px;
+        border-radius: 5px;
+    }
+
+    .blog-sidebar h4 {
+        color: #333;
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+
+    .blog-sidebar p {
+        font-size: 14px;
+        color: #666;
+        margin-bottom: 15px;
+    }
+
+    .list-unstyled li {
+        margin-bottom: 10px;
+    }
+
+    .list-unstyled li a {
+        color: #007bff;
+        text-decoration: none;
+    }
+
+    .list-unstyled li a:hover {
+        text-decoration: underline;
+    }
+
+</style>
+<div class="container">
+    <div class="row mt-4">
+        <div class="col-md-8 blog-main">
+            <h3 class="font-italic">
+                {{post.tilte}}
+            </h3>
+
+            <div class="blog-post">
+                <h2 class="blog-post-title">{{post.head0}}</h2>
+                <p class="blog-post-meta">{{post.pub_date}}by <a href="#">{{post.author}}</a></p>
+
+                <p>{{post.para}}</p>
+                <p>{{post.Description}}</p>
+                <div class="fb-like" data-href="http://127.0.0.1:8000/blog/blogpost/1" data-width="" data-layout="" data-action="" data-size="" data-share="true"></div>
+
+                <div class="fb-comments" data-href="http://127.0.0.1:8000/blog/blogpost/1" data-width="" data-numposts="3"></div>
+                
+               
+            </div><
+
+          
+
+
+        </div>
+
+        <aside class="col-md-4 blog-sidebar">
+            <div class="p-4 mb-3 bg-light rounded">
+                <h4 class="font-italic">About</h4>
+                <p class="mb-0">Welcome!! <em>started out as a small project and is now</em> the fastest growing e-commerce stores of all times in india and abroad.</p>
+            </div>
+
+           
+
+            <div class="p-4">
+                <h4 class="font-italic">Elsewhere</h4>
+                <ol class="list-unstyled">
+                    <li><a href="#">GitHub</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Facebook</a></li>
+                </ol>
+            </div>
+        </aside>
+
+    </div>
+</div>
+
+{% endblock %}

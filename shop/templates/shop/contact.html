@@ -1,0 +1,61 @@
+{% extends 'shop/basic.html' %}
+{% block title %} Contact Us {% endblock %}
+{% block body %}
+<section class="contact" id="contact" style="padding: 130px 0;">
+  <div class="container">
+      <div class="heading text-center">
+          <h2>Contact <span> Us </span></h2>
+          <p style="font-size: 15px; font-weight: 400; line-height: 1.7; color: #999999; margin: 20px 0 60px; padding: 0;">If you have any questions, concerns, or feedback, please feel free to reach out to us. Our customer support team is available to assist you.</p>
+      </div>
+      <div class="row">
+          <div class="col-md-5">
+              <div class="title">
+                  <h3 style="font-size: 18px; font-weight: 600;">Contact Detail</h3>
+                  <p style="font-size: 14px; font-weight: 400; color: #999; line-height: 1.6; margin: 0 0 40px;">Here is the Contact Details mentioned Below, <br>Feel Free to Communicate with us. </p>
+              </div>
+              <div class="content">
+                  <div class="info">
+                      <i class="fas fa-mobile-alt" style="font-size: 30px; padding: 0; margin: 0; color: #02434b; margin-right: 20px; text-align: center; width: 20px;"></i>
+                      <h4 class="d-inline-block" style="font-size: 13px; line-height: 1.4;">PHONE : <br> <span style="font-size: 13px; font-weight: 300; color: #999999;">+12457836913 , +12457836913</span></h4>
+                  </div>
+                  <div class="info">
+                      <i class="far fa-envelope" style="font-size: 30px; padding: 0; margin: 0; color: #02434b; margin-right: 20px; text-align: center; width: 20px;"></i>
+                      <h4 class="d-inline-block" style="font-size: 13px; line-height: 1.4;">EMAIL : <br> <span style="font-size: 13px; font-weight: 300; color: #999999;">example02@info.com</span></h4>
+                  </div>
+                  <div class="info">
+                      <i class="fas fa-map-marker-alt" style="font-size: 30px; padding: 0; margin: 0; color: #02434b; margin-right: 20px; text-align: center; width: 20px;"></i>
+                      <h4 class="d-inline-block" style="font-size: 13px; line-height: 1.4;">ADDRESS :<br> <span style="font-size: 13px; font-weight: 300; color: #999999;">6743 last street , Abcd, Xyz</span></h4>
+                  </div>
+              </div>
+          </div>
+
+          <div class="col-md-7">
+              <form action="/shop/contact/" method="post">{% csrf_token %}
+                  <div class="row">
+                      <div class="col-sm-6">
+                          <input type="text" class="form-control" id="name" name="name" placeholder="Name" style="padding: 25px; font-size: 13px; margin-bottom: 10px; background: #f9f9f9; border: 0; border-radius: 10px;">
+                      </div>
+                      <div class="col-sm-6">
+                          <input type="email" class="form-control" id="email" name="email" placeholder="Email" style="padding: 25px; font-size: 13px; margin-bottom: 10px; background: #f9f9f9; border: 0; border-radius: 10px;">
+                      </div>
+                      <div class="col-sm-12">
+                          <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" style="padding: 25px; font-size: 13px; margin-bottom: 10px; background: #f9f9f9; border: 0; border-radius: 10px;">
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <textarea class="form-control" id="message" name="message" rows="5" placeholder="Message" style="padding: 25px; font-size: 13px; margin-bottom: 10px; background: #f9f9f9; border: 0; border-radius: 10px;"></textarea>
+                  </div>
+                  <button class="btn btn-block" type="submit" style="padding: 10px; border-radius: 10px; font-size: 15px; background: #ff9100; color: #ffffff;">Send Now!</button>
+              </form>
+          </div>
+      </div>
+  </div>
+</section>
+  <script>
+    {% if Submitted %}
+    alert('Thanks for Contacting with us. We will reach up to u ');
+    localStorage.clear();
+    document.location = "/shop";
+{% endif %}
+  </script>
+  {% endblock %}
